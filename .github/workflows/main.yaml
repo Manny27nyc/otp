@@ -146,7 +146,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Download source archive
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
         with:
           name: otp_prebuilt
 
@@ -193,7 +193,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Download source archive
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
         with:
           name: otp_prebuilt
 
@@ -283,7 +283,7 @@ jobs:
           nmake TARGET_CPU=amd64 BUILD=release SHARED=0 DIR_SUFFIX_CPU= -f makefile.vc
 
       - name: Download source archive
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
         with:
           name: otp_prebuilt
 
@@ -380,7 +380,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Download source archive
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
         with:
           name: otp_prebuilt
       - name: Docker login
@@ -635,7 +635,7 @@ jobs:
       - name: Build BASE image
         run: .github/scripts/build-base-image.sh "${BASE_BRANCH}" 64-bit
       - name: Download test results
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
       - name: Cache pre-built tar archives
         uses: actions/cache@v3
         with:
@@ -717,15 +717,15 @@ jobs:
 
       ## Publish the pre-built archive and docs
       - name: Download source archive
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
         with:
           name: otp_prebuilt
       - name: Download html docs
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
         with:
           name: otp_doc_html
       - name: Download man docs
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
         with:
           name: otp_doc_man
 
